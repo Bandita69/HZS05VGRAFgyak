@@ -1,1 +1,1 @@
-# HZS05VGRAFgyak
+# Grafika gyakorlatok feladatai

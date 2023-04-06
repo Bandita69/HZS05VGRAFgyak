@@ -138,6 +138,24 @@ void handle_app_events(App *app)
             case SDL_SCANCODE_E:
                 move_camera(&(app->camera), -1);
                 break;
+            case SDL_SCANCODE_1:
+                app->toggle = 1;
+                break;
+            case SDL_SCANCODE_2:
+                app->toggle = 2;
+                break;
+            case SDL_SCANCODE_3:
+                app->toggle = 3;
+                break;
+            case SDL_SCANCODE_4:
+                app->toggle = 4;
+                break;
+            case SDL_SCANCODE_5:
+                app->toggle = 5;
+                break;
+            case SDL_SCANCODE_6:
+                app->toggle = 6;
+                break;
             default:
                 break;
             }
@@ -201,7 +219,7 @@ void render_app(App *app)
 
     glPushMatrix();
     set_view(&(app->camera));
-    render_scene(&(app->scene));
+    render_scene(&(app->scene), app->toggle);
     glPopMatrix();
 
     SDL_GL_SwapWindow(app->window);

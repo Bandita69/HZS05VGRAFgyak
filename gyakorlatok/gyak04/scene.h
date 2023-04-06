@@ -23,11 +23,11 @@ void update_scene(Scene* scene);
 /**
  * Render the scene objects.
  */
-void render_scene(const Scene* scene);
+void render_scene(const Scene* scene, int toggle);
 
 /**
  * Draw the origin of the world coordinate system.
  */
-void draw_origin();
+void draw_origin(int toggle);
 
 #endif /* SCENE_H */

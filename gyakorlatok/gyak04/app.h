@@ -22,6 +22,7 @@ typedef struct App
     double uptime;
     Camera camera;
     Scene scene;
+    int toggle;
 } App;
 
 /**

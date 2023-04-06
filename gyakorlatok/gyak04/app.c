@@ -156,6 +156,9 @@ void handle_app_events(App *app)
             case SDL_SCANCODE_6:
                 app->toggle = 6;
                 break;
+            case SDL_SCANCODE_7:
+                app->toggle = 7;
+                break;
             default:
                 break;
             }

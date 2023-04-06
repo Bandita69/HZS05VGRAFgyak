@@ -2,7 +2,7 @@
 #include "app.h"
 
 #include <GL/gl.h>
-#include <math.h>
+#include <math.h> // mert szeretem a pi(tét)
 
 void init_scene(Scene *scene)
 {
@@ -96,7 +96,7 @@ void draw_origin(int toggle)
                 glVertex3f(cos((i + 10) * M_PI / 180) * sin((j + 10) * M_PI / 180), sin((i + 10) * M_PI / 180) * sin((j + 10) * M_PI / 180), cos((j + 10) * M_PI / 180));
             }
         }
-        
+
         break;
     case (3):
         // ez a függvény rajzol egy háromszöget  hát ez gyönyörű
@@ -122,7 +122,7 @@ void draw_origin(int toggle)
         }
         break;
     case (5):
-        // ez a függvény egy négyzetrácsos táblát készít
+        // ez a függvény egy sakk táblát készít
         glEnd(); // ez fontos
         glBegin(GL_QUADS);
         glColor3f(0, 0, 0);
@@ -154,8 +154,32 @@ void draw_origin(int toggle)
 
         break;
     case (6):
-        // ez a függvény egy fehér szinnel kitöltött négyzetet rajzol
+        // TODO: betenni az egységkockán belülre
+        // ez a függvény egy henger közelítését rajzolja ki
+        glEnd();
+        glBegin(GL_TRIANGLE_STRIP);
+        glColor3f(1, 0, 0);
+        for (int i = 0; i < 360; i += 10)
+        {
+            glVertex3f(cos(i * M_PI / 180), sin(i * M_PI / 180), 0);
+            glVertex3f(cos((i + 10) * M_PI / 180), sin((i + 10) * M_PI / 180), 0);
+            glVertex3f(cos(i * M_PI / 180), sin(i * M_PI / 180), 1);
+            glVertex3f(cos((i + 10) * M_PI / 180), sin((i + 10) * M_PI / 180), 1);
+        }
 
+        break;
+
+    case (7):
+        // ez a függvény egy kúp közelítését rajzolja ki
+        glEnd();
+        glBegin(GL_TRIANGLE_FAN);
+        glColor3f(0, 1, 0);
+        for (int i = 0; i < 360; i += 10)
+        {
+            glVertex3f(0, 0, 1);
+            glVertex3f(cos(i * M_PI / 180), sin(i * M_PI / 180), 0);
+            glVertex3f(cos((i + 10) * M_PI / 180), sin((i + 10) * M_PI / 180), 0);
+        }
         break;
     }
 

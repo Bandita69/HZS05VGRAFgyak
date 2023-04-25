@@ -1,3 +1,3 @@
 # Grafika gyakorlatok feladatai
 
-A makefilek alapvetően változtak, többnyire az -i -l kapcsolók, mivel nem mindig indult el az eredeti beállításokkal.
+![null_cr](https://user-images.githubusercontent.com/15244649/234325775-7a31fd5a-cba0-4b49-9b7a-8157849109e2.png)

@@ -4,5 +4,5 @@
 
 
 # Problémák:
-## Diszkózik a háttér
+## Diszkózik a háttér ! Elvileg megoldva, glEnable(GL_COLOR_MATERIAL);
 

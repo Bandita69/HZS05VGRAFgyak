@@ -4,5 +4,5 @@
 
 
 # Problémák:
-## Diszkózik a háttér ! Elvileg megoldva, glEnable(GL_COLOR_MATERIAL);
+## Diszkózik a háttér ! Elvileg megoldva, glEnable(GL_COLOR_MATERIAL); Nem nincs, de a kameramozgáshoz van köze és a fényhez
 

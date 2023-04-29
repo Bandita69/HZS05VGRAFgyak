@@ -1,10 +1,10 @@
 # Grafika gyakorlat féléves beadandó terv:
 ### A program célja:
-Egy relaxációs játék, amiben különböző kisállatokat lehet megtekinteni.
+Egy c-ben írt relaxációs játék, amiben különböző kisállatokat lehet megtekinteni sdl2 és opengl segítségével.
 > " A háziállatok, különösen a kutyák és macskák, csökkenthetik az emberek szorongását, az állatok gondozása elősegíti az aktív életmódot, az egyedüllét csökkentését és  a társas kapcsolatok fejlesztését. Ezen kívül a háziállatokkal való kapcsolatnak számos fiziológiai hatása is van, például csökkentheti a vérnyomást és az ezzel  kapcsolatos egészségügyi kockázatokat. " [Forrás](https://newsinhealth.nih.gov/2018/02/power-pets)
 
 ### Funkciók:
-- Különböző állatmodellek közül választhatunk.
+- Különböző animált állatmodellek közül választhatunk.
 - Állathangok a modellek nézegetése közben. Például a macskák dorombolnak.
 >  A dorombolás által keltett rezgések és hangok csökkenthetik az emberi idegrendszer aktivitását, és ezáltal segíthetnek enyhíteni a szorongást és stresszt. [Forrás](https://archiecat.com/cat-purring-benefits/)
 - Kellemes háttérzene.

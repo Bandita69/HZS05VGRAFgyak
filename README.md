@@ -9,6 +9,7 @@ Egy relaxációs játék, amiben különböző kisállatokat lehet megtekinteni.
 >  A dorombolás által keltett rezgések és hangok csökkenthetik az emberi idegrendszer aktivitását, és ezáltal segíthetnek enyhíteni a szorongást és stresszt. [Forrás](https://archiecat.com/cat-purring-benefits/)
 - Kellemes háttérzene.
 - Választható napszak, ami a fényeket befojásolja.
+- Modellek 360° forgatása.
 
 ## Ilusztrálva:
 ![null_cr](https://user-images.githubusercontent.com/15244649/234325775-7a31fd5a-cba0-4b49-9b7a-8157849109e2.png)

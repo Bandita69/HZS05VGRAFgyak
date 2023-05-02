@@ -27,3 +27,9 @@ Egy c-ben írt relaxációs játék, amiben különböző kisállatokat lehet me
 
 ![ScreenCaptureProject7](https://user-images.githubusercontent.com/15244649/235685386-b3c0bcf3-b0a7-47fa-bd5a-9e4b93f307ee.gif)
 
+## Kamera mozgatása:
+W/S - x tengely
+A/D - y tengely
+R/F - z tengely
+Q - alaphelyzet
+

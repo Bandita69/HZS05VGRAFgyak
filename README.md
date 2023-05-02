@@ -19,7 +19,8 @@ Egy c-ben írt relaxációs játék, amiben különböző kisállatokat lehet me
 
 # Célok és feladatok:
 
-![null (3)](https://user-images.githubusercontent.com/15244649/235684655-a349df9d-db4d-48bc-a0dc-db1be9da50ba.png)
+![null (4)](https://user-images.githubusercontent.com/15244649/235704718-82ee0651-216f-463f-bddd-5814532f4338.png)
+
 
 
 # Jelenlegi kinézet:

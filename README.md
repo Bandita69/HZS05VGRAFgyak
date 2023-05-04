@@ -13,13 +13,14 @@ Egy c-ben írt relaxációs játék, amiben különböző kisállatokat lehet me
 - Választható napszak, ami a fényeket befojásolja.
 - Modellek 360° forgatása.
 
-## Ilusztrálva:
+## Ilusztrálva ( eredeti elképzelés ):
 ![null_cr](https://user-images.githubusercontent.com/15244649/234325775-7a31fd5a-cba0-4b49-9b7a-8157849109e2.png)
 
 
-# Célok és feladatok:
+# Célok és feladatok ( frissül ):
 
-![null (4)](https://user-images.githubusercontent.com/15244649/235704718-82ee0651-216f-463f-bddd-5814532f4338.png)
+
+![null (5)](https://user-images.githubusercontent.com/15244649/236273692-55d79d16-9620-454e-8e9d-c2ee7d9d2a54.png)
 
 
 

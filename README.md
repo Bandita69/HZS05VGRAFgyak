@@ -34,3 +34,9 @@ A/D - y tengely
 R/F - z tengely
 Q - alaphelyzet
 
+## WIP
+
+### Modellek animálása blender 2.79-ben:
+
+![ScreenCaptureProject9](https://user-images.githubusercontent.com/15244649/236272037-aebbeffb-7177-45b5-b8ec-e949037bcf6c.gif)
+

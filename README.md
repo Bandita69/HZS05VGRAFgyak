@@ -27,8 +27,9 @@ Egy c-ben írt relaxációs játék, amiben különböző kisállatokat lehet me
 
 # Jelenlegi kinézet:
 
+![ScreenCaptureProject10](https://github.com/Bandita69/HZS05VGRAFgyak/assets/15244649/bf8587ae-bb45-4233-8574-c1e2b7eec1db)
 
-![ScreenCaptureProject7](https://user-images.githubusercontent.com/15244649/235685386-b3c0bcf3-b0a7-47fa-bd5a-9e4b93f307ee.gif)
+
 
 ## Kamera mozgatása:
 W/S - x tengely

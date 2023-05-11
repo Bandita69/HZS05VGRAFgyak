@@ -44,3 +44,8 @@ Q - alaphelyzet
 
 ![ScreenCaptureProject9](https://user-images.githubusercontent.com/15244649/236272037-aebbeffb-7177-45b5-b8ec-e949037bcf6c.gif)
 
+### Animációk folyamatábrája:
+
+
+![animaciofolyamat](https://github.com/Bandita69/HZS05VGRAFgyak/assets/15244649/aad54902-a675-4ca8-b32b-02604e850db6)
+

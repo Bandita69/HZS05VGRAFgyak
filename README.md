@@ -20,7 +20,8 @@ Egy c-ben írt relaxációs játék, amiben különböző kisállatokat lehet me
 # Célok és feladatok ( frissül ):
 
 
-![null (7)](https://github.com/Bandita69/HZS05VGRAFgyak/assets/15244649/fcaf0eb8-b833-436d-ba53-0c576fab13ff)
+![null (8)](https://github.com/Bandita69/HZS05VGRAFgyak/assets/15244649/b5892b20-4165-4df0-8e27-baf918d7108a)
+
 
 
 

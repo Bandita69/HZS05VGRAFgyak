@@ -28,7 +28,8 @@ Egy c-ben írt relaxációs játék, amiben különböző kisállatokat lehet me
 
 # Jelenlegi kinézet:
 
-![ScreenCaptureProject10](https://github.com/Bandita69/HZS05VGRAFgyak/assets/15244649/bf8587ae-bb45-4233-8574-c1e2b7eec1db)
+
+![ScreenCaptureProject11-min](https://github.com/Bandita69/HZS05VGRAFgyak/assets/15244649/0c4b8f57-20e4-48ad-b2a5-5e75b780bcf5)
 
 
 
@@ -47,5 +48,6 @@ Q - alaphelyzet
 ### Animációk folyamatábrája:
 
 
-![animaciofolyamat](https://github.com/Bandita69/HZS05VGRAFgyak/assets/15244649/aad54902-a675-4ca8-b32b-02604e850db6)
+![animaciofolyamat](https://github.com/Bandita69/HZS05VGRAFgyak/assets/15244649/b1452dad-2dce-4c2d-a52a-d2d32fdb2786)
+
 

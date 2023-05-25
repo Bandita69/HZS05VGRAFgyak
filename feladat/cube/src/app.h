@@ -42,7 +42,7 @@ void quit(SDL_Renderer* renderer, SDL_Window* window, TTF_Font* font);
 /**
  * Initialize the application.
  */
-void init_app(App* app, int width, int height, char *model_texture_path, char* background_texture_path, Model * model_rats, Model * model_look, Model* model_stand_sit, Model * model_sit, Model * model_sit_stand, Model * model_sit_look,  Model *model_stand_yawn);
+void init_app(App* app, int width, int height, char *model_texture_path, char* background_texture_path, Model * model_rats, Model * model_look, Model* model_stand_sit, Model * model_sit, Model * model_sit_stand, Model * model_sit_look,  Model *model_stand_yawn, Model * model_shadow);
 
 /**
  * Initialize the OpenGL context.
@@ -64,7 +64,7 @@ void update_app(App* app);
 /**
  * Render the application.
  */
-void render_app(App* app, Model * model_rats);
+void render_app(App* app, Model * model_rats, Model * model_shadows);
 
 /**
  * Destroy the application.

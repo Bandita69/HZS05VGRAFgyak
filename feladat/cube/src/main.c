@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
     struct Model model_sit_stand[100];
     struct Model model_sit_look[100];
     struct Model model_stand_yawn[100];
+    struct Model model_shadow[10];
 
     app.scene.stand = "assets/models/cat/cat_stand_idle/cat_stand_idle_0000%d.obj";
     app.scene.look = "assets/models/cat/cat_stand_look/cat_stand_look_0000%d.obj";
@@ -43,6 +44,8 @@ int main(int argc, char *argv[])
     app.scene.standing = "assets/models/cat/cat_sit_stand/cat_sit_stand_0000%d.obj";
     app.scene.look_sit = "assets/models/cat/cat_sit_look/cat_sit_look_0000%d.obj";
     app.scene.yawn = "assets/models/cat/cat_stand_yawn/cat_stand_yawn_0000%d.obj";
+
+    app.scene.shadow_texture_path = "assets/textures/shadow.png";
 
     // struct array
 
@@ -168,7 +171,7 @@ int main(int argc, char *argv[])
 
                 Mix_VolumeMusic(50);
 
-                init_app(&app, 700, 600, model_texture_path, background_texture_path, model_stand, model_look, model_stand_sit, model_sit, model_sit_stand, model_sit_look, model_stand_yawn);
+                init_app(&app, 700, 600, model_texture_path, background_texture_path, model_stand, model_look, model_stand_sit, model_sit, model_sit_stand, model_sit_look, model_stand_yawn, model_shadow);
                 Mix_PlayMusic(soup, -1);
                 while (app.is_running)
                 {
@@ -181,25 +184,25 @@ int main(int argc, char *argv[])
                         switch (app.scene.animate)
                         {
                         case 1:
-                            render_app(&app, model_stand);
+                            render_app(&app, model_stand, model_shadow);
                             break;
                         case 2:
-                            render_app(&app, model_look);
+                            render_app(&app, model_look, model_shadow);
                             break;
                         case 3:
-                            render_app(&app, model_stand_sit);
+                            render_app(&app, model_stand_sit, model_shadow);
                             break;
                         case 4:
-                            render_app(&app, model_sit);
+                            render_app(&app, model_sit, model_shadow);
                             break;
                         case 5:
-                            render_app(&app, model_sit_stand);
+                            render_app(&app, model_sit_stand, model_shadow);
                             break;
                         case 6:
-                            render_app(&app, model_sit_look);
+                            render_app(&app, model_sit_look, model_shadow);
                             break;
                         case 7:
-                            render_app(&app, model_stand_yawn);
+                            render_app(&app, model_stand_yawn, model_shadow);
                             break;
 
                         default:
@@ -224,7 +227,7 @@ int main(int argc, char *argv[])
                 char *model_texture_path = "assets/textures/black_cat_texture_eyes.jpg";
                 char *background_texture_path = "assets/textures/forest23.jpg";
 
-                init_app(&app, 700, 600, model_texture_path, background_texture_path, model_stand, model_look, model_stand_sit, model_sit, model_sit_stand, model_sit_look, model_stand_yawn);
+                init_app(&app, 700, 600, model_texture_path, background_texture_path, model_stand, model_look, model_stand_sit, model_sit, model_sit_stand, model_sit_look, model_stand_yawn, model_shadow);
                 Mix_PlayMusic(garden, -1);
                 while (app.is_running)
                 {
@@ -237,25 +240,25 @@ int main(int argc, char *argv[])
                         switch (app.scene.animate)
                         {
                         case 1:
-                            render_app(&app, model_stand);
+                            render_app(&app, model_stand, model_shadow);
                             break;
                         case 2:
-                            render_app(&app, model_look);
+                            render_app(&app, model_look, model_shadow);
                             break;
                         case 3:
-                            render_app(&app, model_stand_sit);
+                            render_app(&app, model_stand_sit, model_shadow);
                             break;
                         case 4:
-                            render_app(&app, model_sit);
+                            render_app(&app, model_sit, model_shadow);
                             break;
                         case 5:
-                            render_app(&app, model_sit_stand);
+                            render_app(&app, model_sit_stand, model_shadow);
                             break;
                         case 6:
-                            render_app(&app, model_sit_look);
+                            render_app(&app, model_sit_look, model_shadow);
                             break;
                         case 7:
-                            render_app(&app, model_stand_yawn);
+                            render_app(&app, model_stand_yawn, model_shadow);
                             break;
 
                         default:
@@ -280,7 +283,7 @@ int main(int argc, char *argv[])
                 char *model_texture_path = "assets/textures/ThreeColoredCat_eyes.jpg";
                 char *background_texture_path = "assets/textures/egyetem_rain.jpg";
 
-                init_app(&app, 700, 600, model_texture_path, background_texture_path, model_stand, model_look, model_stand_sit, model_sit, model_sit_stand, model_sit_look, model_stand_yawn);
+                init_app(&app, 700, 600, model_texture_path, background_texture_path, model_stand, model_look, model_stand_sit, model_sit, model_sit_stand, model_sit_look, model_stand_yawn, model_shadow);
                 Mix_PlayMusic(rain_bird, -1);
                 while (app.is_running)
                 {
@@ -293,25 +296,25 @@ int main(int argc, char *argv[])
                         switch (app.scene.animate)
                         {
                         case 1: // ide esetleg jöhetnének a különböző frame számok
-                            render_app(&app, model_stand);
+                            render_app(&app, model_stand, model_shadow);
                             break;
                         case 2:
-                            render_app(&app, model_look);
+                            render_app(&app, model_look, model_shadow);
                             break;
                         case 3:
-                            render_app(&app, model_stand_sit);
+                            render_app(&app, model_stand_sit, model_shadow);
                             break;
                         case 4:
-                            render_app(&app, model_sit);
+                            render_app(&app, model_sit, model_shadow);
                             break;
                         case 5:
-                            render_app(&app, model_sit_stand);
+                            render_app(&app, model_sit_stand, model_shadow);
                             break;
                         case 6:
-                            render_app(&app, model_sit_look);
+                            render_app(&app, model_sit_look, model_shadow);
                             break;
                         case 7:
-                            render_app(&app, model_stand_yawn);
+                            render_app(&app, model_stand_yawn, model_shadow);
                             break;
 
                         default:
@@ -336,7 +339,7 @@ int main(int argc, char *argv[])
                 char *model_texture_path = "assets/textures/white_cat_eyes.jpg";
                 char *background_texture_path = "assets/textures/playhouse.jpg";
 
-                init_app(&app, 700, 600, model_texture_path, background_texture_path, model_stand, model_look, model_stand_sit, model_sit, model_sit_stand, model_sit_look, model_stand_yawn);
+                init_app(&app, 700, 600, model_texture_path, background_texture_path, model_stand, model_look, model_stand_sit, model_sit, model_sit_stand, model_sit_look, model_stand_yawn, model_shadow);
                 Mix_PlayMusic(rest, -1);
                 while (app.is_running)
                 {
@@ -347,25 +350,25 @@ int main(int argc, char *argv[])
                         switch (app.scene.animate)
                         {
                         case 1:
-                            render_app(&app, model_stand);
+                            render_app(&app, model_stand, model_shadow);
                             break;
                         case 2:
-                            render_app(&app, model_look);
+                            render_app(&app, model_look, model_shadow);
                             break;
                         case 3:
-                            render_app(&app, model_stand_sit);
+                            render_app(&app, model_stand_sit, model_shadow);
                             break;
                         case 4:
-                            render_app(&app, model_sit);
+                            render_app(&app, model_sit, model_shadow);
                             break;
                         case 5:
-                            render_app(&app, model_sit_stand);
+                            render_app(&app, model_sit_stand, model_shadow);
                             break;
                         case 6:
-                            render_app(&app, model_sit_look);
+                            render_app(&app, model_sit_look, model_shadow);
                             break;
                         case 7:
-                            render_app(&app, model_stand_yawn);
+                            render_app(&app, model_stand_yawn, model_shadow);
                             break;
 
                         default:

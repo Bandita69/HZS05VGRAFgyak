@@ -84,6 +84,7 @@ void handle_app_events(App *app)
             if (is_mouse_down)
             {
                 rotate_camera(&(app->camera), mouse_x - x, mouse_y - y);
+              
             }
             mouse_x = x;
             mouse_y = y;

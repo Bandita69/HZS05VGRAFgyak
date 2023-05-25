@@ -9,12 +9,12 @@
 
 #include <string.h>
 
-void init_scene(Scene *scene, char *model_texture_path, char *background_texture_path, Model *model_rats, Model *model_look, Model *model_stand_sit, Model *model_sit, Model *model_sit_stand, Model *model_sit_look, Model *model_stand_yawn)
+void init_scene(Scene *scene, char *model_texture_path, char *background_texture_path, Model *model_rats, Model *model_look, Model *model_stand_sit, Model *model_sit, Model *model_sit_stand, Model *model_sit_look, Model *model_stand_yawn, Model *model_shadows)
 {
 
     scene->texture_id2 = load_texture(model_texture_path);
     scene->texture_background = load_texture(background_texture_path);
-    scene->shadow_texture = load_texture("assets/textures/shadow.png");
+    scene->shadow_texture = load_texture(scene->shadow_texture_path);
 
     char fileName[10000] = ""; // ezt egészen biztosan igy kell lefoglalni
 
@@ -119,9 +119,20 @@ void init_scene(Scene *scene, char *model_texture_path, char *background_texture
         scene->frame = 0;
         free_model(&(scene->rat));
 
-        load_model(&(scene->background), "assets/models/sphere.obj");
+        load_model(&(scene->shadow), "assets/models/cat_shadow_1.obj");
+        model_shadows[1] = scene->shadow;
+        load_model(&(scene->shadow), "assets/models/cat_shadow_2.obj");
+        model_shadows[2] = scene->shadow;
+        load_model(&(scene->shadow), "assets/models/cat_shadow_3.obj");
+        model_shadows[3] = scene->shadow;
+        load_model(&(scene->shadow), "assets/models/cat_shadow_4.obj");
+        model_shadows[4] = scene->shadow;
+        load_model(&(scene->shadow), "assets/models/cat_shadow_5.obj");
+        model_shadows[5] = scene->shadow;
 
-        load_model(&(scene->shadow), "assets/models/shadow.obj");
+        free_model(&(scene->shadow));
+
+        load_model(&(scene->background), "assets/models/sphere.obj");
 
         scene->loaded = 1;
     }
@@ -188,7 +199,7 @@ void update_scene(Scene *scene)
 {
 }
 
-void render_scene(const Scene *scene, Model *model_frames)
+void render_scene(const Scene *scene, Model *model_frames, Model * model_shadows)
 {
 
     // draw_origin();
@@ -213,23 +224,28 @@ void render_scene(const Scene *scene, Model *model_frames)
 
     // shadow
     glPushMatrix();
+    // átlátszó cuccok enable
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_BLEND);
+
     glTranslatef(0.5, 0.5, 0.5);
     glScalef(7.0, 7.0, 7.0);
 
     glBindTexture(GL_TEXTURE_2D, scene->shadow_texture);
     glRotatef(scene->shadow_angle, 0.0, 1.0, 0.0);
+    // 0.5 átlátszó
+    glColor4f(0.0, 0.0, 0.0, 0.5);
 
-    draw_model(&(scene->shadow));
+    draw_model(&(model_shadows[(int)((scene->light_angle +20) / 180 * 5)]));
     glPopMatrix();
 
+    // cat
     glPushMatrix();
+    // nem átlátszó
+    glColor4f(1.0, 1.0, 1.0, 1.0);
 
     glTranslatef(0.5, 0.5, 0.5);
     glRotatef(90, 1.0, 0.0, 0.0);
-
-    // forgás a modellnek
-    // glRotatef(scene->angle, 0.0, 1.0, 0.0);
-    // glRotatef(scene->angle2, 1.0, 0.0, 0.0);
 
     glBindTexture(GL_TEXTURE_2D, scene->texture_id2);
 

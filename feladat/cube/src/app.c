@@ -28,7 +28,7 @@ int Init(SDL_Window **window, SDL_Renderer **renderer, TTF_Font **font)
 
 int Window_Init(SDL_Window **window)
 {
-    *window = SDL_CreateWindow("Pong", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 600, 700, SDL_WINDOW_OPENGL);
+    *window = SDL_CreateWindow("Menu", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 600, 700, SDL_WINDOW_OPENGL);
     if (!*window)
     {
         printf("Error initializing window: %s\n", SDL_GetError());
@@ -164,6 +164,8 @@ void redraw(SDL_Renderer *renderer)
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
     SDL_Delay(1000 / 60);
+
+
     return;
 }
 
@@ -177,7 +179,7 @@ void quit(SDL_Renderer *renderer, SDL_Window *window, TTF_Font *font)
     return;
 }
 
-void init_app(App *app, int width, int height, char *model_texture_path, char *background_texture_path, Model *model_rats, Model *model_look, Model *model_stand_sit, Model *model_sit, Model *model_sit_stand, Model *model_sit_look, Model *model_stand_yawn)
+void init_app(App *app, int width, int height, char *model_texture_path, char *background_texture_path, Model *model_rats, Model *model_look, Model *model_stand_sit, Model *model_sit, Model *model_sit_stand, Model *model_sit_look, Model *model_stand_yawn, Model * model_shadow)
 {
     int error_code;
     int inited_loaders;
@@ -192,7 +194,7 @@ void init_app(App *app, int width, int height, char *model_texture_path, char *b
     }
 
     app->window = SDL_CreateWindow(
-        "Cube!",
+        "Relax!",
         SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
         width, height,
         SDL_WINDOW_OPENGL);
@@ -220,7 +222,7 @@ void init_app(App *app, int width, int height, char *model_texture_path, char *b
     reshape(width, height);
 
     init_camera(&(app->camera));
-    init_scene(&(app->scene), model_texture_path, background_texture_path, model_rats, model_look, model_stand_sit, model_sit, model_sit_stand, model_sit_look, model_stand_yawn);
+    init_scene(&(app->scene), model_texture_path, background_texture_path, model_rats, model_look, model_stand_sit, model_sit, model_sit_stand, model_sit_look, model_stand_yawn, model_shadow);
 
     app->is_running = true;
 }
@@ -291,11 +293,16 @@ void update_app(App *app)
 
     update_camera(&(app->camera), elapsed_time);
     update_scene(&(app->scene));
+
+
+
 }
 
-void render_app(App *app, Model *model_rats)
+void render_app(App *app, Model *model_rats, Model * model_shadows)
 
 {
+
+  
 
     if (app->scene.frame_draw < app->scene.end_frame && SDL_GetTicks() % 30 == 0)
     {
@@ -362,16 +369,12 @@ void render_app(App *app, Model *model_rats)
         app->scene.light_z = 6 * sin(degree_to_radian(app->scene.light_angle));
         app->scene.light_x = -6 * cos(degree_to_radian(app->scene.light_angle));
 
-        printf("light_x: %f\n", app->scene.light_x);
-        printf("light_z: %f\n", app->scene.light_z);
-
         // light color changes with the angle of the light source
         app->scene.diff_g = 100.0f + (app->scene.light_z / 6) * 128.0f;
         app->scene.diff_b = 50.0f + (app->scene.light_z / 6) * 156.0f;
 
         // shadow moves opposite direction of the light source
         app->scene.shadow_angle = app->scene.light_angle + 180;
-        
 
         app->scene.light_angle += 2;
 
@@ -391,7 +394,7 @@ void render_app(App *app, Model *model_rats)
 
     set_view(&(app->camera));
 
-    render_scene(&(app->scene), model_rats);
+    render_scene(&(app->scene), model_rats, model_shadows);
     glNormal3f(1, 1, 1);
 
     free_model(&(app->scene).rat);

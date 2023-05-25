@@ -26,6 +26,8 @@ typedef struct Scene
     float shadow_angle; // y-on forog
     GLuint shadow_texture;
 
+    char * shadow_texture_path;
+
     char *stand;
     char *look;
     char *sit;
@@ -58,7 +60,7 @@ typedef struct Scene
 /**
  * Initialize the scene by loading models.
  */
-void init_scene(Scene *scene, char *model_texture_path, char *background_texture_path, Model *model_rats, Model *model_look, Model *model_stand_sit, Model *model_sit, Model *model_sit_stand, Model *model_sit_look, Model *model_stand_yawn);
+void init_scene(Scene *scene, char *model_texture_path, char *background_texture_path, Model *model_rats, Model *model_look, Model *model_stand_sit, Model *model_sit, Model *model_sit_stand, Model *model_sit_look, Model *model_stand_yawn, Model * model_shadow);
 
 /**
  * Set the lighting of the scene STRONK.
@@ -89,7 +91,7 @@ void update_scene(Scene *scene);
 /**
  * Render the scene objects.
  */
-void render_scene(const Scene *scene, Model *model_rats);
+void render_scene(const Scene *scene, Model *model_rats, Model * model_shadows);
 
 /**
  * Draw the origin of the world coordinate system.
